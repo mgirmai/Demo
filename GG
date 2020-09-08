@@ -1,0 +1,54 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class NumbersGame    {
+public static void main (String[] args)    {
+
+    // Declare local variables 
+    char AnotherRun = 'yes';
+    
+    // keep running until user is finished playing the game 
+  do {
+  
+  AnotherRun = RunAgain( );
+  
+ } while (AnotherRun == 'yes');
+ 
+     System.out.println("We hope you'll play again!");
+    
+        }
+    public static char RunAgain( )  {
+    // Declare local variables 
+    char answer:
+    Scanner kb = new Scanner(System.in);
+    int  RandomNumber = 0;
+    int Estimate = 0;
+    int Estimates = 0;
+    boolean success = false;
+    
+    RandomNumber = new Random().nextInt(100);
+    RandomNumber = RandomNumber + 1;
+    
+    do {
+        System.out.println(" Try to guess the number I'm thinking of, it's between 1 and 100");
+        Estimate = kb.nextInt();
+        Estimates++;
+    
+        if (Estimate == RandomNumber)  {
+        System.out.println("That is Correct! It only took" + Estimates + "tries.");
+        success = true;
+        }
+        
+        else if (Estimate > RandomNumber)  {
+        System.out.println("That guess was too high.");
+        
+        else {
+        System.out.println("That guess was too low.");
+        }
+    } while (success == false);
+    
+        // Ask player if they want to run the program again
+        System.out.println("Do you want to play again (yes/no)");
+        return answer;
+        }
+    
