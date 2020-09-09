@@ -12,7 +12,7 @@ public static void main (String[] args)    {
   
   AnotherRun = RunAgain( );
   
- } while (AnotherRun == 'yes');
+ } while (AnotherRun == 'y');
  
      System.out.println("We hope you'll play again!");
     
@@ -48,7 +48,8 @@ public static void main (String[] args)    {
     } while (success == false);
     
         // Ask player if they want to run the program again
-        System.out.println("Do you want to play again (yes/no)");
+        System.out.println("Do you want to play again (y/n)");
+        answer = kb.next().charAt(0); //only the first letter needs to be evaluated 
         return answer;
         }
     
